@@ -1,0 +1,21 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependencies/build outputs, in case tooling is added later
+node_modules/
+dist/
+build/
+.vercel/
+

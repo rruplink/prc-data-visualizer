@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinese Province Data Visualizer</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="toolbar" aria-label="Map controls">
+        <div>
+          <p class="eyebrow">China Mainland Province Data</p>
+          <h1>China Mainland Province Data</h1>
+        </div>
+
+        <div class="controls">
+          <label>
+            <span>Dataset</span>
+            <select id="dataset-select"></select>
+          </label>
+
+          <label>
+            <span>Year</span>
+            <select id="year-select"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <section class="map-region" aria-label="China mainland province choropleth map">
+          <div class="map-topline">
+            <div>
+              <h2 id="map-title">Map</h2>
+              <p id="map-subtitle"></p>
+            </div>
+            <div class="status-pill" id="data-status">Loading</div>
+          </div>
+
+          <div class="map-frame">
+            <svg
+              id="china-map"
+              role="img"
+              aria-labelledby="map-title map-subtitle"
+              viewBox="0 0 960 720"
+            ></svg>
+          </div>
+
+          <div class="legend" id="legend" aria-label="Map status"></div>
+        </section>
+
+        <aside class="detail-panel" aria-live="polite">
+          <div class="detail-kicker">Selected Province</div>
+          <h2 id="province-title">Select a province</h2>
+          <p id="province-summary">
+            Hover or click a province to inspect its values.
+          </p>
+          <div class="metric-list" id="metric-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <div class="tooltip" id="tooltip" role="status" aria-hidden="true"></div>
+
+    <script src="./vendor/d3.v7.min.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
